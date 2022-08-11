@@ -1,0 +1,217 @@
+/* [DOES NOT MATTER] */
+html, body { font-family: arial, sans-serif }
+
+body{
+  height: 100vh;
+}
+
+input, button {
+  outline: none;
+}
+
+.form-control{
+  border-radius: 0;
+}
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #181818;
+    outline: 0;
+    /* box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%); */
+    box-shadow: none;
+}
+.card{
+  border: 0;
+  padding: 2rem;
+}
+.card .info{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  text-align: end;
+  font-size: .8rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.card .info strong{
+  font-size: 1.2rem;
+}
+
+.list-players-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+}
+.list-players-container .list-row {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  height: 38px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.list-players-container .list-row:hover{
+  background-color: #eee;
+}
+
+.list-players-container .list-row input[type=text] {
+  display: none;
+}
+
+.list-row.editMode>input[type=text] {
+  position: relative;
+  flex: 1 1 auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  width: 1%;
+  min-width: 0;
+}
+
+.list-players-container .list-row.editMode input[type=text] {
+  display: block;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px orange solid;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.list-players-container .list-row.editMode label {
+  display: none;
+}
+.list-players-container .list-row label {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-left: .5rem;
+  color: #212529;
+  /* width: 237px; */
+}
+
+.list-players-container .list-row label.vekn {
+  color: #212529cc;
+  font-size: 90%;
+}
+
+.list-players-container .list-row .list-item {
+  min-width: 100px;
+  margin-left: .5rem;
+}
+
+.list-players-container .list-row .list-item-btn-wrap{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-items: center;
+  align-items: center;
+}
+.list-players-container .list-row .list-item-btn-wrap .list-item-btn{
+  width: 38px;
+  height: 38px;
+}
+
+.list-players-container .list-row .list-item-btn-wrap .list-item-btn:hover{
+  opacity: .75;
+  background-color: rgba(141, 141, 141, 0.5);
+  outline: 0;
+  box-shadow: none;
+}
+.list-players-container .list-row .list-item-btn-wrap .list-item-btn:focus,
+.list-players-container .list-row .list-item-btn-wrap .list-item-btn:active{
+  box-shadow: none;
+  outline: 0;
+}
+
+.list-players-container .list-row .list-item-btn-wrap .btn-close {
+  display: block;
+  box-sizing: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+.btn-edit{
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  opacity: .5;
+  box-sizing: inherit;
+  width: 38px;
+  height: 38px;
+  color: #000;
+}
+.btn-edit:after {
+  font-family: "Font Awesome 5 Free";
+  content:"\f044";
+  font-weight: 400;
+}
+.list-players-container .list-row.editMode .list-item-btn-wrap .btn-edit:after{
+  font-family: "Font Awesome 5 Free";
+  content:"\f0c7";
+  font-weight: 400;
+}
+.list-players-container .list-row.editMode .list-item-btn-wrap .btn-close{
+  display: none;
+}
+.btn-container{
+  text-align: end;
+}
+.btn-container-sb{
+  display: flex;
+  justify-content: space-between;
+}
+.btn-archon{
+  display: inline-block;
+  position: relative;
+  background-color: #181818;
+  border: 0;
+  border-radius: 0;
+  box-sizing: inherit;
+  position: relative;
+  color: #fff;
+  font-size: .875rem;
+  padding: .5rem 1rem;
+  max-width: 108px;
+  outline:0;
+  text-align: center;
+}
+.btn-archon:hover{
+  background-color: #000;
+  border: 0;
+  outline:0;
+  border-radius: 0;
+  color: #fff;
+}
+/* --- mesas --- */
+.mesa-header{
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+}
+.li-player{
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+}
+.li-player input{
+  width: 30px;
+  margin: 0;
+  border-radius: 0;
+  border: thin solid rgba(139, 0, 0, 0.185);
+  text-align: center;
+  border-collapse: collapse;
+  color:#666;
+}

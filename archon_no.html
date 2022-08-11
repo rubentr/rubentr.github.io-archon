@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ARCHON</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preload" as="font" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="archon.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="archon.js"></script>
+  </head>
+  <body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-expand-md shadow">
+      <div class="container-fluid">
+        <span class="navbar-brand">ARCHON</span>
+      </div>
+    </nav>
+
+    <main class="container">
+      <!-- (A) SHOPPING LIST -->
+     
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-sm-12">
+          <div class="card p-3">
+          <!-- (B) ADD NEW ITEM -->
+          <h4>Add new players</h4>
+          <form id="player-add" class="player-add--row">
+            
+            <div class="input-group">
+              <input type="text" id="player-item" placeholder="New Player" required value="" class="form-control"/>
+              <input type="text" id="player-vekn" placeholder="VEKN" value="" class="form-control"/>
+              <input type="submit" id="player-add-btn" value="Add Player" class="btn btn-outline-secondary"/>
+            </div>
+            
+          </form>
+
+          <div id="player-list"></div>
+
+          <div id="player-number" class="text-end small mt-2"></div>
+
+          <div id="number-mesas"></div>
+
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12 torneo-wrap d-none" id="torneo">
+
+          <div class="start-torneo-row w-50">
+
+            <button id="btnMesas" type="button" class="btn btn-outline-dark" onclick="calcularMesas(document.querySelector('#player-list').childElementCount)">Numero de mesas</button>
+            <div class="mb-4">
+              <div id="info-mesas-row">
+                <div class="title">
+                  Escoje el número de mesas y jugadores
+                </div >
+                <!-- <button type="buton" >volver</button> -->
+              </div>
+              <div id="nmesas" class="d-flex flex-wrap justify-content-start align-items-center;">
+                <!-- Aquí van la cantidad de mesas -->
+              </div> 
+            </div>
+            
+             
+            <div class="mb-3 row">
+              <label for="rondas-number" class="col-sm-3 col-form-label">Número de rondas</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control w-25" id="rondas-number" value="3">
+              </div>
+            </div>
+
+            <div class="mb-3 text-center">
+              <button type="button" class="btn btn-dark" onclick="makeRondas(document.getElementById('rondas-number').value)" >START</button>
+            </div>
+
+          </div>
+          
+          <!-- <p id="output"></p> -->
+          <div id="container-rondas">
+
+          </div>
+        </div>
+  
+      </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="ModalTable" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <footer>
+      footer
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+  </body>
+</html>

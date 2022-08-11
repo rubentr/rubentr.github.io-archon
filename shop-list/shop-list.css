@@ -1,0 +1,50 @@
+/* (A) CONTAINERS + SHARED */
+#shop-list, #shop-add {
+  display: flex;
+  flex-wrap: wrap;
+  background: #f2f2f2;
+  border: 1px solid #eee;
+  padding: 10px;
+  max-width: 400px;
+}
+.item-row, .item-name, .item-del, .item-ok, #shop-item, #shop-add-btn {
+  box-sizing: border-box; 
+  border: 0;
+}
+.item-name, #shop-item {
+  background: #fff;
+  padding: 10px;
+}
+.item-del, .item-ok, #shop-add-btn {
+  cursor: pointer;
+  color: #fff;
+}
+
+/* (B) SHOPPING LIST */
+.item-row {
+  display: flex;
+  width: 100%;
+  margin: 5px 0;
+}
+.item-name { width: 60%; }
+.item-name.item-got { background: #f5fffa; }
+.item-name.item-got:before {
+  content: "\02713";
+  margin-right: 5px;
+  font-weight: bold;
+  color: #00d036;
+}
+
+.item-del, .item-ok { width: 20%; }
+.item-del { background: #de1919; }
+.item-ok { background: #5a75d6; }
+
+/* (C) ADD ITEM */
+#shop-item { width: 75% }
+#shop-add-btn {
+  width: 25%;
+  background: #5a75d6;
+}
+
+/* [DOES NOT MATTER] */
+html, body { font-family: arial, sans-serif }

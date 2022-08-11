@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      ARCHON
+    </title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preload" as="font" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
+    <link href="assets/main.css" rel="stylesheet">
+        
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav class="container-xxl flex-wrap flex-md-nowrap" aria-label="Main navigation">
+        <a class="navbar-brand p-0 me-2" href="index.html" aria-label="Archon">
+          Archon
+        </a>
+      </nav>
+    </header>
+    <!-- HEADER END -->
+    <!-- MAIN -->
+    <main class="flex-shrink-0 h-100">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-sm-12">
+            <!-- AÑADIR JUGADORES-->
+            <div id="d_player" class="card">
+              <h3>Jugadores</h3>
+
+              <form id="Add_Player" method="post">
+                
+                <div class="input-group">
+                  <input type="text" id="add_Player_Name" name="add_Player_Name" placeholder="New Player" class="form-control"  required/>
+                  <input type="text" id="add_Player_Vekn" name="add_Player_Vekn" placeholder="VEKN"  class="form-control" />
+                  <input type="submit" id="add_Player_Btn" name="add_Player_Btn" value="Add" class="btn btn-outline-secondary" />
+                </div>
+                
+              </form>
+
+              <div class="info">
+                <div id="Num_Players"></div>
+              </div>
+              
+              <div id="List_Players" class="list-players-container"></div>
+
+              <div class="btn-container">
+                <input type="button" id="Begin_Btn" value="Next" class="btn-archon mt-4" style="display: none;"/>
+              </div>
+            </div>
+            <!-- FIN AÑADIR JUGADORES-->
+            <!-- PREVIA -->
+            <div id="d_previa" class="card" style="display: none;">
+              <h3>Previa</h3>
+              <!-- eleccion de rondas-->
+              <div class="row g-3 align-items-center">
+                <div class="col-6">
+                  <label for="rondas-number" class="col-form-label">¿Cuantas rondas?</label>
+                </div>
+                <div class="col-6">
+                  <input type="text" id="rondas-number" class="form-control" value="3">
+                </div>
+              </div>
+              <!-- fin eleccion de rondas-->
+              
+              <div class="mb-4 mt-4">
+
+                <button id="btnMesas" type="button" class="" onclick="calcularMesas(document.querySelector('#List_Players').childElementCount)">
+                  Numero de mesas
+                </button>
+
+                <div id="info-mesas-row">
+                  
+                  <h5>Escoje el número de mesas y jugadores</h5>
+                  <div id="Num_Mesas" class="">
+                    <!-- Aquí van la cantidad de mesas -->
+                  </div>
+                </div>
+                 
+              </div>
+              
+
+              <div class="btn-container-sb">
+                <input type="button" id="volver_Btn" value="Volver" class="btn-archon"/>
+                <input type="button" id="next1_Btn" value="Next" class="btn-archon" onclick="makeRondas(document.getElementById('rondas-number').value)"/>
+              </div>
+            </div>
+            <!-- FIN PREVIA-->
+
+            <!-- MESAS -->
+            <div id="d_tables" class="card" style="display: none;">
+              <h3>Mesas</h3>
+              
+              <div id="container-rondas">
+
+              </div>
+
+            </div>
+            <!-- FIN mesas -->
+            
+            <div id="d_cual" class="card" style="display: none;">
+              <h3>Clasificación</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">
+        <span class="text-muted">Archon WIP</span>
+      </div>
+    </footer>
+
+  <!-- BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script src="assets/main.js"></script>
+
+  </body>
+  
+</html>

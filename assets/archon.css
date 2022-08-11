@@ -1,0 +1,174 @@
+/* [DOES NOT MATTER] */
+html, body { font-family: arial, sans-serif }
+
+.dark{
+  background-color: black;
+}
+
+/* dark light theme  */
+.icon-container{
+  position:relative;
+}
+.sun,.moon{
+  font-size: 10rem;
+  width: fit-content;
+  height: fit-content;
+}
+.moon{
+  position: absolute;
+  inset: 0;
+}
+.moon-logo{
+  opacity: 0;
+  transform: translateY(20%) rotateZ(50deg);
+  transition: all 1s ease-out;
+}
+.sun-logo{
+  opacity: 1;
+  transform: translateY(0) rotateZ(0deg);
+  transition: all 1s ease-out;
+}
+.animate-sun{
+  opacity: 0;
+  transform: translateY(20%) rotateZ(100deg);
+}
+.animate-moon{
+  opacity: 1;
+  transform: translateY(0) rotateZ(0deg);
+  color:aliceblue;
+}
+
+/* (A) CONTAINERS + SHARED */
+#shop-list, #shop-add {
+  display: flex;
+  flex-wrap: wrap;
+  background: #f2f2f2;
+  border: 1px solid #eee;
+  padding: 10px;
+  max-width: 400px;
+}
+.item-row, .item-name, .item-del {
+  box-sizing: border-box; 
+  border: 0;
+}
+.item-name {
+  /* background: #fff; */
+  padding: .25rem .5rem;
+}
+.item-vekn{
+  color:#666;
+  font-family: monospace;
+}
+.item-row:hover{
+  background:rgba(0,0,0,0.1);
+}
+.item-del {
+  cursor: pointer;
+  color: #fff;
+}
+
+/* (B) jugadores */
+.player-add--row,
+.item-row {
+  display: flex;
+  width: 100%;
+  margin: 5px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+.item-name { width: 60%; }
+.item-name.item-got { background: #f5fffa; }
+
+/* (c) mesas */
+.torneo-wrap{
+  display:flex;
+  justify-content: center;
+  
+  flex-flow: column;
+  align-items: flex-start;
+}
+#info-mesas-row{
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.start-torneo-row{
+  /* display: flex; */
+  width: 100%;
+  margin: 5px 0;
+  
+}
+.rondas-item{
+    display: -webkit-box;
+    display: flex;
+    margin: 0;
+    /* background: rgba(1,1,1,.02); */
+    /* padding: 1rem .5rem 1rem 0; */
+}
+.rondas-item .mesa{
+  margin:1rem .5rem;
+}
+.rondas-item ol, .rondas-item ul {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.rondas-item ol {
+  counter-reset: li;
+  padding-left: .5rem;
+}
+.rondas-item ol{
+  display: -webkit-box;
+}
+.rondas-item li {
+  position: relative;
+  margin: 0 0 .5rem;
+  padding: .5rem 1rem;
+  box-sizing: border-box;
+  word-break: break-word;
+  min-width: 20%;
+}
+.rondas-item > ol > li {
+  min-width: 50%;
+}
+
+.rondas-item ol>li {
+  position: relative;
+}
+.rondas-item .mesa-header{
+  padding: .6rem;
+  background: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rondas-item .mesa-header span{
+ 
+  
+  font-weight: 700;
+  
+}
+.rondas-item > ol ol > li {
+  min-width: 11.11111111111111%;
+}
+.rondas-item ol > li:before {
+  counter-increment: li;
+  content: counter(li);
+  position: absolute;
+  right: calc(100% - .8rem + .5ex);
+  top: calc(.5rem + .5em);
+  font-size: .8rem;
+  line-height: 1em;
+  font-family: monospace;
+  opacity: .5;
+  text-align: right;
+  white-space: nowrap;
+}
+
+#torneo{
+  display: none;
+}
